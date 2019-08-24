@@ -75,7 +75,7 @@ body {
   }
 }
 
-.navigation__link:hover ~ .product-category {
+.navigation__item:hover .product-category {
   display: block;
 }
 
