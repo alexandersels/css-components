@@ -1,0 +1,8 @@
+.idea/
+target/
+*.iml
+*node_modules/
+
+/coolblue-desktop-nav/css/style.comp.css
+/coolblue-desktop-nav/css/style.css
+/coolblue-desktop-nav/css/style.prefix.css

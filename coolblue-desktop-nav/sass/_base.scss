@@ -1,0 +1,139 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  padding-top: 4.6rem;
+}
+
+.coolblue-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $color-main-blue;
+  width: 100%;
+  padding: 1.5rem;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+  }
+}
+
+.navigation-wrapper {
+  display: block;
+  height: 6.3rem;
+}
+
+.navigation {
+  position: fixed;
+  top: 4.6rem;
+  width: 100%;
+
+  &__list {
+    list-style: none;
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    margin-left: 2rem;
+    position: static;
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: $color-main-blue;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+    border-bottom: 3px solid transparent;
+    padding: 1rem;
+  }
+
+  &__link:hover {
+    border-bottom: 3px solid $color-main-blue;
+  }
+}
+
+.navigation__link:hover ~ .product-category {
+  display: block;
+}
+
+.product-category {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 2rem 2rem;
+
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__title {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: $color-main-blue;
+  }
+
+  &__title:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+}
+
+.category-navigation {
+
+  &__list {
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #111;
+    font-weight: 400;
+    font-size: 1.4rem;
+    border-bottom: 1px solid transparent;
+  }
+
+  &__link:hover {
+    border-bottom: 1px solid #111;
+  }
+}
+
+.content {
+  margin-top: 3rem;
+}
