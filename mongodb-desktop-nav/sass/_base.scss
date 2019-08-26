@@ -43,6 +43,7 @@ body {
   display: block;
   height: 6rem;
 }
+
 .navigation {
 
   position: relative;
@@ -62,15 +63,10 @@ body {
     margin-right: 4rem;
   }
 
-  &__list {
-    list-style: none;
-    display: flex;
-  }
-
   &__item {
+    // can't give this a position otherwise the dropdown doesn't work.
     display: inline-block;
     padding: 2rem 0;
-    position: static;
   }
 
   &__item:hover {
@@ -97,27 +93,60 @@ body {
 }
 
 .navigation-dropdown {
-  position: fixed;
+  position: absolute;
+  display: block;
   top: 100%;
   left: 0;
-  z-index: 100;
+  z-index: 50;
   width: 100%;
-  display: block;
-  background-color: red;
+  background-color: white;
+  padding: 0 0 0 14rem;
+  cursor: default;
 
-  &__list {
-    list-style: none;
-    padding: 2rem 0;
-  }
+  height: 0;
+  overflow: hidden;
+
+  transition: height .2s;
 
   &__item {
     display: block;
-    padding: 1rem 0;
+    cursor: pointer;
   }
 
-  &__link {
-    text-decoration: none;
+  &__item:not(:last-child) {
+    margin-bottom: 2rem;
   }
+
+  &__title {
+    display: block;
+    padding: 2rem 0;
+    color: $color-green-dark;
+  }
+
+  &__section {
+    display: block;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: $color-blue-dark;
+  }
+
+  &__description {
+    display: block;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    color: $color-grey-primary;
+  }
+
+}
+
+.navigation__item:hover .navigation-dropdown {
+  height: 38rem;
+  border-top: 1px solid $color-blue-dark;
+  border-bottom: 1px solid $color-blue-dark;
+}
+
+.navigation-dropdown__item:hover .navigation-dropdown__section {
+  color: $color-green-primary;
 }
 
 .sticky {
