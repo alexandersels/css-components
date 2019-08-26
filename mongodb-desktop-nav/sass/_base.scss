@@ -97,8 +97,9 @@ body {
 }
 
 .navigation-dropdown {
-  position: absolute;
+  position: fixed;
   top: 100%;
+  left: 0;
   z-index: 100;
   width: 100%;
   display: block;
