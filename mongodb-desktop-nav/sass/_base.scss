@@ -39,9 +39,15 @@ body {
   }
 }
 
+.navigation-wrapper {
+  display: block;
+  height: 6rem;
+}
 .navigation {
 
+  position: relative;
   border-bottom: 1px solid $color-blue-dark;
+  background-color: #fff;
 
   .container {
     display: flex;
@@ -52,17 +58,19 @@ body {
   &__logo {
     display: inline-block;
     padding: 2rem 0;
-    margin-right: 2rem;
+    margin-left: 2rem;
+    margin-right: 4rem;
   }
 
   &__list {
-    display: flex;
     list-style: none;
+    display: flex;
   }
 
   &__item {
     display: inline-block;
     padding: 2rem 0;
+    position: static;
   }
 
   &__item:hover {
@@ -74,13 +82,65 @@ body {
   }
 
   &__link {
+    display: inline-block;
     text-decoration: none;
+    text-align: center;
     color: $color-grey-primary;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    font-weight: 700;
   }
 
   // When hovering the item, we want to see the text of the link in green
   &__item:hover &__link {
     color: $color-green-primary;
+  }
+}
+
+.navigation-dropdown {
+  position: absolute;
+  top: 100%;
+  z-index: 100;
+  width: 100%;
+  display: block;
+  background-color: red;
+
+  &__list {
+    list-style: none;
+    padding: 2rem 0;
+  }
+
+  &__item {
+    display: block;
+    padding: 1rem 0;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 200;
+}
+
+.block {
+  margin: 4rem 2rem;
+
+  &__header {
+    font-size: 3rem;
+    font-weight: 400;
+    color: $color-green-primary;
+    padding: 2rem 0;
+  }
+
+  p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: $color-grey-primary;
+    line-height: 2rem;
+
   }
 }
